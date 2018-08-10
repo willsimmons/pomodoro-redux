@@ -1,11 +1,17 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, StatusBar} from 'react-native';
 
 class Timer extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Timer Goes Here</Text>
+        <StatusBar barStyle={'light-content'}/>
+        <View style={styles.upper}>
+          <Text style={styles.time}>Timer Goes Here</Text>
+        </View>
+        <View style={styles.lower}>
+          <Text style={styles.startAndStop}>buttons go here</Text>
+        </View>
       </View>
     );
   }
@@ -14,9 +20,26 @@ class Timer extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#000000',
+  },
+  upper: {
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  lower: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  time: {
+    color: '#fff',
+    fontSize: 30,
+  },
+  startAndStop: {
+    flex: 1,
+    color: '#fff',
+    fontSize: 30,
   }
 });
 
